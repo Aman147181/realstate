@@ -1,6 +1,4 @@
 import React from "react";
-
-import Link from "next/link";
 import HomepageHero from "@/components/HomepageHero";
 import HomepageInfo from "@/components/HomepageInfo";
 import { Roboto } from "next/font/google";
@@ -13,7 +11,8 @@ const home = () => {
     <div div className={roboto.className}>
       <div className="">
         <HomepageHero />
-        <HomepageInfo/>
+        <HomepageInfo />
+       
       </div>
     </div>
   );
