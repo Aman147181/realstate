@@ -63,8 +63,8 @@ const Property = () => {
         </div>
       </div>
       <div className="grid pb-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pt-10 sm:gap-16 md:gap-12 lg:gap-10 gap-y-12 px-12 sm:px-20 md:px-20 lg:px-24">
-        {featuredArray.map((el, index) => (
-          <FeaturedRoom key={index} info={el} />
+        {featuredArray.map((info, index) => (
+          <FeaturedRoom key={index} info={info} />
         ))}
           </div>
           <Link href="/property"><h1 className={`uppercase pl-12 sm:pl-20 md:pl-20 mb-10 inline-block  hover:text-orange-700 lg:pl-24 text-black text-xl font-bold ${ mont.className }`}>see all properties</h1></Link>
