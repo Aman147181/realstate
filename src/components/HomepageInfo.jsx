@@ -32,7 +32,7 @@ const HomepageInfo = () => {
       </div>
 
       <div className="grid p-12 text-center pt-0 sm:pt-6 lg:pt-6 uppercase  text-black sm:p-20 lg:px-24   grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-16 gap-y-8">
-        <div className="flex hover:text-orange-600  duration-300 text-slate-900 p-6 lg:p-10 py-16 lg:py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-[#fafafa] justify-center  shadow-sm border-slate-50">
+        <div className="flex hover:text-orange-700  duration-300 text-slate-900 p-6 lg:p-10 py-16 lg:py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-orange-50 justify-center  shadow-sm border-slate-50">
           <h1 className=" text-7xl">
             <MdOutlineHomeWork />
           </h1>
@@ -45,7 +45,7 @@ const HomepageInfo = () => {
             solutions
           </h1>
         </div>
-        <div className="flex hover:text-orange-600  duration-300 text-slate-900 p-10 py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-[#fafafa] justify-center  shadow-sm border-slate-50">
+        <div className="flex hover:text-orange-700  duration-300 text-slate-900 p-10 py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-orange-50 justify-center  shadow-sm border-slate-50">
           <h1 className=" text-7xl">
             <BsBuildings />
           </h1>
@@ -58,7 +58,7 @@ const HomepageInfo = () => {
             solutions
           </h1>
         </div>
-        <div className="flex hover:text-orange-600  duration-300 text-slate-900 p-10 py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-[#fafafa] justify-center  shadow-sm border-slate-50">
+        <div className="flex hover:text-orange-700  duration-300 text-slate-900 p-10 py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-orange-50 justify-center  shadow-sm border-slate-50">
           <h1 className=" text-7xl">
             <FaHouseCrack />
           </h1>
