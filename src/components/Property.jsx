@@ -21,7 +21,7 @@ const Property = () => {
     {
       name: "Mountain View Condos",
       price: "150000",
-      imgUrl: "/featuredImage2.jpg",
+      imgUrl: "/featuredImage1.jpg",
       location: "London",
       type: "Villa",
     },

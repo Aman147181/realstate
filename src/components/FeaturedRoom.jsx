@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({
@@ -9,7 +10,8 @@ const FeaturedRoom = ({ info }) => {
     <div
       className={`flex flex-col  item-center w-full justify-start space-y-5 ${montserrat.className}`}
     >
-      <div className="overflow-hidden">
+          <div className="overflow-hidden">
+             
         <img
           radius="none"
           className="max-h-64 object-cover w-full scale-125 hover:scale-100 hover:rounded-[20px] transition duration-500 ease-in-out "
