@@ -68,7 +68,7 @@ const HomepageInfo = () => {
           <h1 className="text-black hover:text-black pt-4">
             {" "}
             Unlock your dream property with our comprehensive real estate
-            solutions
+            solution
           </h1>
         </div>
       </div>
