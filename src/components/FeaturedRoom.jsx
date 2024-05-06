@@ -6,11 +6,17 @@ const montserrat = Montserrat({
 });
 const FeaturedRoom = ({ info }) => {
   return (
-      <div className={`flex flex-col  item-center w-full justify-start space-y-5 ${montserrat.className}`}>
-          <div className="overflow-hidden">
-          <img radius="none" className="max-h-64 object-cover w-full scale-125 hover:scale-100 hover:rounded-[20px] transition duration-500 ease-in-out "  alt="Featured Room" src={info.imgUrl} />
-          </div>
-   
+    <div
+      className={`flex flex-col  item-center w-full justify-start space-y-5 ${montserrat.className}`}
+    >
+      <div className="overflow-hidden">
+        <img
+          radius="none"
+          className="max-h-64 object-cover w-full scale-125 hover:scale-100 hover:rounded-[20px] transition duration-500 ease-in-out "
+          alt="Featured Room"
+          src={info.imgUrl}
+        />
+      </div>
 
       <div className="grid grid-cols-2">
         <div className="flex flex-col justify-start items-start">
@@ -25,6 +31,5 @@ const FeaturedRoom = ({ info }) => {
     </div>
   );
 };
-
 
 export default FeaturedRoom;
