@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import { NextUIProvider } from "@nextui-org/react";
 import Footer from "@/components/Footer";
-
+import AuthProvider from "@/config/authProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -13,6 +13,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <AuthProvider>
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
           <Footer/>
         </NextUIProvider>
       </body>
-    </html>
+      </html>
+      </AuthProvider>
   );
 }

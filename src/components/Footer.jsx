@@ -5,6 +5,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { Montserrat, Roboto_Condensed } from "next/font/google";
 import Link from "next/link";
+import { connectDB } from "@/config/connectDB";
 const montserrat = Montserrat({
   weight: "400",
   subsets: ["latin"],
@@ -13,7 +14,8 @@ const roboto = Roboto_Condensed({
   weight: "400",
   subsets: ["latin"],
 });
-const Footer = () => {
+const Footer = async () => {
+    await connectDB();
   return (
     <div className={montserrat.className}>
       <div className="flex  sm:flex-row w-full bg-orange-50 justify-between items-end    px-6 sm:px-20 lg:px-24 py-8">

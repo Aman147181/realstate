@@ -42,7 +42,7 @@ const Property = () => {
   ];
   return (
     <div>
-      <div className="grid px-12 sm:px-20 md:px-20 lg:px-24 gap-12 gap-y-6  lg:grid-cols-3 grid-cols-1">
+      <div className="grid px-5 sm:px-20 md:px-20 lg:px-24 gap-12 gap-y-6  lg:grid-cols-3 grid-cols-1">
         <div className="flex font-medium flex-col space-y-3 col-span-1 lg:col-span-2 item-start justify-start">
           <h1 className={`text-sm uppercase ${mont.className}`}>
             Let us help you find your dream home
@@ -62,12 +62,12 @@ const Property = () => {
           </h1>
         </div>
       </div>
-      <div className="grid pb-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pt-10 sm:gap-16 md:gap-12 lg:gap-10 gap-y-12 px-12 sm:px-20 md:px-20 lg:px-24">
+      <div className="grid pb-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pt-10 sm:gap-16 md:gap-12 lg:gap-10 gap-y-12 px-5 sm:px-20 md:px-20 lg:px-24">
         {featuredArray.map((info, index) => (
           <FeaturedRoom key={index} info={info} />
         ))}
           </div>
-          <Link href="/property"><h1 className={`uppercase pl-12 sm:pl-20 md:pl-20 mb-10 inline-block  hover:text-orange-700 lg:pl-24 text-black text-xl font-bold ${ mont.className }`}>see all properties</h1></Link>
+          <Link href="/property"><h1 className={`uppercase pl-5 sm:pl-20 md:pl-20 mb-10 inline-block  hover:text-orange-700 lg:pl-24 text-black text-xl font-bold ${ mont.className }`}>see all properties</h1></Link>
     </div>
   );
 };

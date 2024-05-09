@@ -14,7 +14,7 @@ const roboto = Roboto_Condensed({
 const HomepageInfo = () => {
   return (
     <div className={montserrat.className}>
-      <div className=" p-12 sm:p-16 lg:p-24 lg:pt-32  grid gap-16 gap-y-8 grid-cols-1 md:grid-cols-2">
+      <div className=" p-12 px-5 sm:p-16 lg:p-24 lg:pt-32  grid gap-16 gap-y-8 grid-cols-1 md:grid-cols-2">
         <div className="col-span-1 flex flex-col items-start justify-start">
           <h1 className="text-orange-700 uppercase text-xl"> best solution</h1>
           <h1 className="text-black uppercase text-4xl sm:text-5xl">
@@ -31,7 +31,7 @@ const HomepageInfo = () => {
         </div>
       </div>
 
-      <div className="grid p-12 text-center pt-0 sm:pt-6 lg:pt-6 uppercase  text-black sm:p-20 lg:px-24   grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-16 gap-y-8">
+      <div className="grid p-12 px-5 text-center pt-0 sm:pt-6 lg:pt-6 uppercase  text-black sm:p-20 lg:px-24   grid-cols-1 lg:grid-cols-3 gap-10 xl:gap-16 gap-y-8">
         <div className="flex hover:text-orange-700  duration-300 text-slate-900 p-6 lg:p-10 py-16 lg:py-20 space-y-8 text-center col-span-1 flex-col items-center bg-[#fbf8f6] hover:bg-orange-50 justify-center  shadow-sm border-slate-50">
           <h1 className=" text-7xl">
             <MdOutlineHomeWork />
