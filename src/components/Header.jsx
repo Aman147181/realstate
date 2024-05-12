@@ -13,6 +13,7 @@ import {
   DropdownMenu,
   DropdownItem,
   User,
+  Button,
 } from "@nextui-org/react";
 
 const montserrat = Montserrat({
@@ -57,11 +58,6 @@ const Header = () => {
         <Link className="hover:text-orange-700" href="/property">
           properties
         </Link>
-        {session && (
-          <Link className="hover:text-orange-700" href="/addProperty">
-            add property{" "}
-          </Link>
-        )}
       </div>
 
       {!session &&
@@ -94,10 +90,11 @@ const Header = () => {
           <DropdownMenu aria-label="User Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-bold">Signed in as</p>
-              <p className="font-bold">@tonyreichert</p>
+              <p className="font-bold">{session.user.name}</p>
             </DropdownItem>
+           
             <DropdownItem key="profile">My Profile</DropdownItem>
-            <DropdownItem key="dashboard">Admin Dashboard</DropdownItem>
+            <DropdownItem key="dashboard"> <Link href="/dashboard">Admin Dashboard</Link></DropdownItem>
 
             <DropdownItem key="logout" onClick={()=>{signOut()}} color="danger">
               Log Out
