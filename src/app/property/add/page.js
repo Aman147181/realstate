@@ -1,8 +1,11 @@
+import PropertyForm from '@/components/PropertyAddForm'
 import React from 'react'
 
 const page = () => {
   return (
-    <div className = "mt-32 min-h-screen">page</div>
+    <div className=" py-24 pt-32 bg-orange-50 flex items-center justify-center min-h-screen">
+      <PropertyForm/>
+    </div>
   )
 }
 
