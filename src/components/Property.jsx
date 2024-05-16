@@ -23,8 +23,8 @@ const Property = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch(`${process.env.VERCEL_URL}/api/properties`);
-
+        const res = await fetch(`/api/properties`);
+console.log(res)
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
