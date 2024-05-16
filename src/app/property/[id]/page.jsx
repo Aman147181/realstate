@@ -16,9 +16,9 @@ export const roboto = Roboto_Condensed({
   subsets: ["latin"],
   display: "swap",
 });
-const page = () => {
+const Page = () => {
   const { id } = useParams();
-
+  console.log(id);
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   async function fetchProperty(id) {
@@ -143,4 +143,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
