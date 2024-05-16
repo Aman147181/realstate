@@ -79,7 +79,7 @@ export const POST = async (request) => {
     console.log(propertyData);
     const newProperty = new Property(propertyData);
     await newProperty.save();
-console.log(newProperty);
+    console.log(newProperty);
     return Response.redirect(
       `${process.env.NEXTAUTH_URL}/property/${newProperty._id}`
     );
@@ -106,6 +106,6 @@ export const GET = async (request) => {
     });
   } catch (error) {
     console.log(error);
-    return new Response("Something Went Wrong", { status: 500 });
+    return new Response("Something Went Wrong",error, { status: 500 });
   }
 };
