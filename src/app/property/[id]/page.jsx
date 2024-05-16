@@ -6,6 +6,7 @@ import { Inter, Roboto_Condensed } from "next/font/google";
 import Image from "next/image";
 import ImageGalleryComponent from "@/components/ImageGalleryComponent";
 import Link from "next/link";
+import { Spinner } from "@nextui-org/react";
 
 export const inter = Inter({
   subsets: ["latin"],
@@ -18,7 +19,6 @@ export const roboto = Roboto_Condensed({
 });
 const Page = () => {
   const { id } = useParams();
-  console.log(id);
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
   async function fetchProperty(id) {
@@ -60,8 +60,15 @@ const Page = () => {
       </h1>
     );
   }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen w-full">
+        <Spinner size="lg" />
+      </div>
+    );
+  }
   return (
-    <div className="min-h-screen pt-36 px-6 sm:px-20">
+    <div className="min-h-screen pt-20 sm:pt-36 px-6 sm:px-20">
       <h1 className={`${inter.className} text-4xl font-semibold `}>
         {property?.name}
       </h1>
@@ -102,9 +109,17 @@ const Page = () => {
           <div className="w-full">
             <div className="justify-between mt-12  flex w-full items-center">
               <h1 className="text-4xl">Address</h1>
-              <Link href={property?.googleMapLink||"https://maps.app.goo.gl/EeNG8NASzrWcRis16"}><button className="p-5 py-2 border-1 border-black rounded-full hover:bg-black hover:text-white">
-                Open On Google Maps
-              </button></Link>
+              {console.log(property)}
+              <Link
+                href={
+                  property?.google ||
+                  "https://maps.app.goo.gl/EeNG8NASzrWcRis16"
+                }
+              >
+                <button className="p-5 py-2 border-1 border-black rounded-full hover:bg-black hover:text-white">
+                  Open On Google Maps
+                </button>
+              </Link>
             </div>
             <div className="border-y-2 border-[#e0e0e0] mt-8 py-5 flex justify-between items-center w-full">
               <h1>street</h1>
@@ -137,7 +152,7 @@ const Page = () => {
         </div>
       </div>
       <div className="w-full mt-5 ">
-<ImageGalleryComponent images={property?.images}/>
+        <ImageGalleryComponent images={property?.images} />
       </div>
     </div>
   );

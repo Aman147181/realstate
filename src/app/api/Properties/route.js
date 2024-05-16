@@ -19,8 +19,7 @@ export const POST = async (request) => {
 
     // Access all values from amenities and images
     const amenities = formData.getAll("amenities");
-   
-    
+
     const images = formData
       .getAll("images")
       .filter((image) => image.name !== "");
@@ -37,11 +36,12 @@ export const POST = async (request) => {
         zipcode: formData.get("location.zipcode"),
       },
       beds: formData.get("beds"),
+      google: formData.get("google"),
       baths: formData.get("baths"),
       area: formData.get("area"),
       price: formData.get("price"),
       amenities,
-    
+
       seller_info: {
         name: formData.get("seller_info.name"),
         email: formData.get("seller_info.email"),
@@ -79,11 +79,33 @@ export const POST = async (request) => {
     console.log(propertyData);
     const newProperty = new Property(propertyData);
     await newProperty.save();
-
+console.log(newProperty);
     return Response.redirect(
       `${process.env.NEXTAUTH_URL}/property/${newProperty._id}`
     );
   } catch (error) {
     return new Response("Failed to add property", error, { status: 500 });
+  }
+};
+
+export const GET = async (request) => {
+  try {
+    await connectDB();
+
+    const total = await Property.countDocuments({});
+    console.log(total);
+    const pageSize = total > 3 ? 3 : total;
+    const properties = await Property.find({}).limit(pageSize);
+
+    const result = {
+      properties,
+    };
+
+    return new Response(JSON.stringify(result), {
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response("Something Went Wrong", { status: 500 });
   }
 };

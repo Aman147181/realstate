@@ -32,6 +32,9 @@ const PropertySchema = new Schema(
         type: String,
       },
     },
+    google: {
+      type: String,
+    },
     beds: {
       type: Number,
       required: true,

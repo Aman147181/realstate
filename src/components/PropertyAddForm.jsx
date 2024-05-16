@@ -17,6 +17,7 @@ const PropertyAddForm = () => {
     beds: "",
     baths: "",
     area: "",
+    google: "",
     amenities: [],
     rates: {
       weekly: "",
@@ -213,7 +214,23 @@ const PropertyAddForm = () => {
                 onChange={handleChange}
               />
             </div>
-
+            <div className="mb-4">
+              <label
+                htmlFor="google"
+                className="block text-gray-700 font-bold mb-2"
+              >
+                Google Map Link
+              </label>
+              <input
+                type="text"
+                id="google"
+                name="google"
+                className="border rounded w-full py-2 px-3"
+                required
+                value={fields.google}
+                onChange={handleChange}
+              />
+            </div>
             <div className="mb-4 flex flex-wrap">
               <div className="w-full sm:w-1/3 pr-2">
                 <label
@@ -469,15 +486,15 @@ const PropertyAddForm = () => {
                 Price
               </label>
               <div className="flex items-center">
-                  <input
-                    type="number"
-                    id="price"
-                    name="price"
-                    className="border rounded w-full py-2 px-3"
-                    value={fields.price}
-                    onChange={handleChange}
-                  />
-                </div>
+                <input
+                  type="number"
+                  id="price"
+                  name="price"
+                  className="border rounded w-full py-2 px-3"
+                  value={fields.price}
+                  onChange={handleChange}
+                />
+              </div>
             </div>
 
             <div className="mb-4">
