@@ -40,7 +40,7 @@ const PropertySchema = new Schema(
       type: Number,
       required: true,
     },
-    square_feet: {
+    area: {
       type: Number,
       required: true,
     },
@@ -49,16 +49,8 @@ const PropertySchema = new Schema(
         type: String,
       },
     ],
-    rates: {
-      nightly: {
-        type: Number,
-      },
-      weekly: {
-        type: Number,
-      },
-      monthly: {
-        type: Number,
-      },
+    price: {
+      type: Number,
     },
     seller_info: {
       name: {

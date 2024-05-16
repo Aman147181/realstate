@@ -13,8 +13,9 @@ import {
   DropdownMenu,
   DropdownItem,
   User,
-  Button,
+  Avatar,
 } from "@nextui-org/react";
+import MobileSidebar from "./MobileNavbar";
 
 const montserrat = Montserrat({
   weight: "400",
@@ -34,24 +35,40 @@ const Header = () => {
   console.log(providers);
 
   const [showmobilemenu, setshowmobilemenu] = useState(false);
+
   return (
-    <div className="w-full px-5 sm:px-20 z-20 flex fixed top-0 bg-white text-[#203963] items-center justify-between h-16">
-      <Link href="/">
-        <div className="flex space-x-1 justify-center items-center">
-          <Image
-            src="/stateLogo.png"
-            width={50}
-            height={50}
-            alt="Realtor logo"
-          />
-          <h1
-            className={`${montserrat.className} hidden text-black sm:block font-bold text-lg  uppercase `}
-          >
-            Realtor
-          </h1>
-        </div>
-      </Link>
-      <div className="sm:flex hidden space-x-5 justify-center items-center">
+    <div className="w-full px-5 mobile:px-10 sm:px-16 md:px-20 z-20 flex fixed top-0 bg-white text-[#203963] items-center justify-between h-16">
+       <MobileSidebar
+        isOpen={showmobilemenu}
+        onClose={() => setshowmobilemenu(false)}
+      />
+      <div className="flex item-center space-x-3 sm:space-x-0 justify-center">
+        <button
+          onClick={() => {
+            setshowmobilemenu((el) => !el);
+          }}
+          className="block sm:hidden text-2xl"
+        >
+          {!showmobilemenu ? <IoMenuOutline /> : <RxCross1 />}
+        </button>
+        <Link href="/">
+          <div className="flex space-x-1 justify-center items-center">
+            <Image
+              src="/stateLogo.png"
+              width={50}
+              height={50}
+              alt="Realtor logo"
+            />
+            <h1
+              className={`${montserrat.className}  text-black  font-bold text-lg  uppercase `}
+            >
+              Realtor
+            </h1>
+          </div>
+        </Link>
+      </div>
+
+      <div className="sm:flex hidden space-x-2 md:space-x-5 justify-center items-center">
         <Link className="hover:text-orange-700" href="/">
           home
         </Link>
@@ -66,15 +83,15 @@ const Header = () => {
           <button
             key={index}
             onClick={() => signIn(provider.id)}
-            className="  border border-black hover:border-2 rounded-full p-[6px] space-x-2 px-6  text-black   hidden  sm:flex items-center justify-start"
+            className="  border  hover:border-black rounded-full p-[6px] space-x-2 px-6  text-black   flex items-center justify-start"
           >
             <FcGoogle size={20} />
-            <h1 className="text-sm">Sign in with Google</h1>
+            <h1 className="hidden sm:flex text-sm">Sign in with Google</h1>
           </button>
         ))}
-      {console.log(session)}
+
       {session && (
-        <Dropdown placement="bottom-start">
+        <Dropdown className="hidden sm:flex" placement="bottom-start">
           <DropdownTrigger>
             <User
               as="button"
@@ -82,7 +99,7 @@ const Header = () => {
                 isBordered: true,
                 src: session.user.image,
               }}
-              className="transition-transform"
+              className="transition-transform hidden md:flex"
               description={session.user.email}
               name={session.user.name}
             />
@@ -92,25 +109,59 @@ const Header = () => {
               <p className="font-bold">Signed in as</p>
               <p className="font-bold">{session.user.name}</p>
             </DropdownItem>
-           
-            <DropdownItem key="profile">My Profile</DropdownItem>
-            <DropdownItem key="dashboard"> <Link href="/dashboard">Admin Dashboard</Link></DropdownItem>
 
-            <DropdownItem key="logout" onClick={()=>{signOut()}} color="danger">
+            <DropdownItem key="profile">My Profile</DropdownItem>
+            <DropdownItem key="dashboard">
+              {" "}
+              <Link href="/dashboard">Admin Dashboard</Link>
+            </DropdownItem>
+
+            <DropdownItem
+              key="logout"
+              onClick={() => {
+                signOut();
+              }}
+              color="danger"
+            >
               Log Out
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       )}
 
-      <button
-        onClick={() => {
-          setshowmobilemenu((el) => !el);
-        }}
-        className="block sm:hidden text-2xl"
-      >
-        {!showmobilemenu ? <IoMenuOutline /> : <RxCross1 />}
-      </button>
+      {session && (
+        <div className="flex md:hidden">
+          <Dropdown placement="bottom-start">
+            <DropdownTrigger>
+              <Avatar as="button" isBordered src={session.user.image} />
+            </DropdownTrigger>
+            <DropdownMenu aria-label="User Actions" variant="flat">
+              <DropdownItem key="profile" className="h-14 gap-2">
+                <p className="font-bold">Signed in as</p>
+                <p className="font-bold">{session.user.name}</p>
+              </DropdownItem>
+
+              <DropdownItem key="profile">My Profile</DropdownItem>
+              <DropdownItem key="dashboard">
+                {" "}
+                <Link href="/dashboard">Admin Dashboard</Link>
+              </DropdownItem>
+
+              <DropdownItem
+                key="logout"
+                onClick={() => {
+                  signOut();
+                }}
+                color="danger"
+              >
+                Log Out
+              </DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+      )}
+    
+     
     </div>
   );
 };

@@ -43,7 +43,7 @@ const Footer = async () => {
             <Link href="/property">
               <h1 className="hover:text-orange-700">properties</h1>
             </Link>
-            <h1 className="hover:text-orange-700">add property</h1>
+           
           </div>
         </div>
         <div className="flex text-lg sm:text-xl items-center justify-center space-x-3">

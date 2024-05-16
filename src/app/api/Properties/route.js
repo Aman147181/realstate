@@ -19,8 +19,8 @@ export const POST = async (request) => {
 
     // Access all values from amenities and images
     const amenities = formData.getAll("amenities");
-    console.log("amenities");
-    console.log(amenities);
+   
+    
     const images = formData
       .getAll("images")
       .filter((image) => image.name !== "");
@@ -38,13 +38,10 @@ export const POST = async (request) => {
       },
       beds: formData.get("beds"),
       baths: formData.get("baths"),
-      square_feet: formData.get("square_feet"),
+      area: formData.get("area"),
+      price: formData.get("price"),
       amenities,
-      rates: {
-        weekly: formData.get("rates.weekly"),
-        monthly: formData.get("rates.monthly"),
-        nightly: formData.get("rates.nightly."),
-      },
+    
       seller_info: {
         name: formData.get("seller_info.name"),
         email: formData.get("seller_info.email"),
@@ -79,7 +76,7 @@ export const POST = async (request) => {
       // Add uploaded images to the propertyData object
       propertyData.images = uploadedImages;
     }
-
+    console.log(propertyData);
     const newProperty = new Property(propertyData);
     await newProperty.save();
 

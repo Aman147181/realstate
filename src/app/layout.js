@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { NextUIProvider } from "@nextui-org/react";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/config/authProvider";
+import 'photoswipe/dist/photoswipe.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <NextUIProvider>
-          {/* <Header /> */}
+          <Header />
           {children}
           <Footer/>
         </NextUIProvider>
