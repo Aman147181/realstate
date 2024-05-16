@@ -65,8 +65,8 @@ const Property = () => {
       </div>
       <div className="grid pb-10 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 pt-10 sm:gap-16 md:gap-12 lg:gap-10 gap-y-12 px-5 sm:px-20 md:px-20 lg:px-24">
         {property?.map((info, index) => (
-          <Link href={`/property/${info._id}`}>
-            <FeaturedRoom key={index} info={info} />
+          <Link key={index} href={`/property/${info._id}`}>
+            <FeaturedRoom  info={info} />
           </Link>
         ))}
       </div>
