@@ -83,6 +83,7 @@ const Page = () => {
           <h1>Area</h1>
           <h1 className="font-medium">{property?.area} sq. ft.</h1>
         </div>
+        {console.log(process.env.NEXT_PUBLIC_BASE_URL)}
         <div className="flex flex-col">
           <h1>Bedrooms</h1>
           <h1 className="font-medium">{property?.beds}</h1>

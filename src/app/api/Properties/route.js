@@ -93,7 +93,7 @@ export const GET = async (request) => {
     await connectDB();
 
     
-    const properties = await Property.find().limit(3);
+    const properties = await Property.find({}).limit(3);
 
     const result = {
       properties
