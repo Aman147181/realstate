@@ -3,6 +3,29 @@ import Property from "@/models/Property";
 import { getSessionUser } from "@/config/getSessionUser";
 import cloudinary from "@/config/cloudinary";
 
+
+
+export const GET = async (request) => {
+  try {
+    await connectDB();
+
+    
+    const properties = await Property.find({}).limit(3);
+
+    const result = {
+      properties
+    };
+
+    return new Response(JSON.stringify(result), {
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response("Something Went Wrong",error, { status: 500 });
+  }
+};
+
+
 export const POST = async (request) => {
   try {
     await connectDB();
@@ -88,22 +111,3 @@ export const POST = async (request) => {
   }
 };
 
-export const GET = async (request) => {
-  try {
-    await connectDB();
-
-    
-    const properties = await Property.find({}).limit(3);
-
-    const result = {
-      properties
-    };
-
-    return new Response(JSON.stringify(result), {
-      status: 200,
-    });
-  } catch (error) {
-    console.log(error);
-    return new Response("Something Went Wrong",error, { status: 500 });
-  }
-};
