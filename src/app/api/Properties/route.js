@@ -92,13 +92,11 @@ export const GET = async (request) => {
   try {
     await connectDB();
 
-    const total = await Property.countDocuments({});
-    console.log(total);
-    const pageSize = total > 3 ? 3 : total;
-    const properties = await Property.find({}).limit(pageSize);
+    
+    const properties = await Property.find().limit(3);
 
     const result = {
-      properties,
+      properties
     };
 
     return new Response(JSON.stringify(result), {
