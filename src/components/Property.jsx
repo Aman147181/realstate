@@ -1,3 +1,4 @@
+"use client"
 import { Montserrat, Roboto_Condensed, Dancing_Script } from "next/font/google";
 import FeaturedRoom from "./FeaturedRoom";
 import Link from "next/link";
@@ -18,7 +19,7 @@ export const dance = Dancing_Script({
 
 const fetchProperties = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/properties`);
+    const res = await fetch(`/api/properties`);
     console.log(res);
     if (!res.ok) {
       throw new Error("Failed to fetch data");
@@ -33,6 +34,7 @@ const fetchProperties = async () => {
 
 export default async function Property() {
   const property = await fetchProperties();
+  console.log(property)
 console.log(property);
   return (
     <div>
