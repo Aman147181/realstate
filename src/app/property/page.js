@@ -40,12 +40,9 @@ const Property = () => {
   const [page, setPage] = useState(1);
   const [propertyToShow, setPropertyToShow] = useState([]);
   const addProperty = () => {
-   
-    if (session)
-      onOpen();
-    else
-      toast.error("You have to sign in to add property");
-}
+    if (session) onOpen();
+    else toast.error("You have to sign in to add property");
+  };
   useEffect(() => {
     const fetchProperties = async () => {
       try {
@@ -138,8 +135,9 @@ const Property = () => {
             Property Category
           </h1>
           <div className="flex flex-col w-full">
-            {categoryArray.map((el) => (
+            {categoryArray.map((el, index) => (
               <h1
+                key={index}
                 onClick={() => {
                   setSelectedCategory((a) => el);
                   setPage(1);
@@ -153,16 +151,15 @@ const Property = () => {
                 {el}
               </h1>
             ))}
-            
+
             <Button
-                className="mt-3"
-                onPress={addProperty}
-                size="sm"
-                color="primary"
-              >
-                Add Property
-              </Button>
-           
+              className="mt-3"
+              onPress={addProperty}
+              size="sm"
+              color="primary"
+            >
+              Add Property
+            </Button>
           </div>
         </div>
         <div className="lg:col-span-1 max-w-64 lg:block hidden ">
@@ -185,8 +182,9 @@ const Property = () => {
               Property Category
             </h1>
             <div className="flex flex-col w-full">
-              {categoryArray.map((el) => (
+              {categoryArray.map((el, index) => (
                 <h1
+                  key={index}
                   onClick={() => {
                     setSelectedCategory((a) => el);
                     setPage(1);
@@ -242,7 +240,7 @@ const Property = () => {
         )}
 
         <Modal
-          isDismissable ={false} 
+          isDismissable={false}
           size="5xl"
           scrollBehavior="inside"
           isOpen={isOpen}
