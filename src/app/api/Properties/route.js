@@ -110,7 +110,7 @@ export const POST = async (request) => {
     await newProperty.save();
     console.log(newProperty);
     return Response.redirect(
-      `${process.env.NEXTAUTH_URL}/property/${newProperty._id}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/property/${newProperty._id}`
     );
   } catch (error) {
     return new Response("Failed to add property", error, { status: 500 });

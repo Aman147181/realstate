@@ -104,7 +104,7 @@ const PropertyAddForm = () => {
   return (
     mounted && (
       <form
-        action="/api/properties"
+        action={ `${process.env.NEXT_PUBLIC_BASE_URL}/api/properties`}
         method="POST"
         encType="multipart/form-data"
       >
