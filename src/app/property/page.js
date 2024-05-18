@@ -46,11 +46,13 @@ const Property = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/properties/all`);
-console.log(res)
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_BASE_URL}/api/properties/all`
+        );
+        console.log(res);
+        // if (!res.ok) {
+        //   throw new Error("Failed to fetch data");
+        // }
 
         const data = await res.json();
         setProperties(data.properties);
