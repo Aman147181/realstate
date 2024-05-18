@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import SearchComponent from "./SearchComponent";
+// import SearchComponent from "./SearchComponent";
 import { Montserrat, Roboto_Condensed } from "next/font/google";
 const montserrat = Montserrat({
   weight: "400",
@@ -28,7 +28,7 @@ const HomepageHero = () => {
           Explore properties
         </button>
       </Link>
-      <SearchComponent />
+      {/* <SearchComponent /> */}
       </div>
       </div>
   );

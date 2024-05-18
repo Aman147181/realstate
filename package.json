@@ -20,7 +20,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.0",
-    "react-photoswipe-gallery": "^3.0.1"
+    "react-photoswipe-gallery": "^3.0.1",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "eslint": "^8",

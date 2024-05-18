@@ -3,7 +3,7 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className=" py-24 pt-32 bg-orange-50 flex items-center justify-center min-h-screen">
+    <div className=" py-24 pt-32 bg-sky-100 flex items-center justify-center min-h-screen">
       <PropertyForm/>
     </div>
   )

@@ -5,6 +5,8 @@ import { NextUIProvider } from "@nextui-org/react";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/config/authProvider";
 import 'photoswipe/dist/photoswipe.css';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,7 +21,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <NextUIProvider>
           <Header />
-          {children}
+            {children}
+            <ToastContainer />
           <Footer/>
         </NextUIProvider>
       </body>
