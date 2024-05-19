@@ -23,7 +23,6 @@ const montserrat = Montserrat({
 });
 const Header = () => {
   const { data: session } = useSession();
-  console.log(session);
   const [providers, setProviders] = useState(null);
   useEffect(() => {
     const setAuthProviders = async () => {
@@ -32,7 +31,6 @@ const Header = () => {
     };
     setAuthProviders();
   }, []);
-  console.log(providers);
 
   const [showmobilemenu, setshowmobilemenu] = useState(false);
 

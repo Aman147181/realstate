@@ -35,7 +35,7 @@ const Property = () => {
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [properties, setProperties] = useState([]);
-  const [filter, setFilter] = useState(true);
+  const [filter, setFilter] = useState(false);
   const [filteredProperty, setFilteredProperty] = useState([]);
   const [page, setPage] = useState(1);
   const [propertyToShow, setPropertyToShow] = useState([]);
@@ -55,6 +55,7 @@ const Property = () => {
         // }
 
         const data = await res.json();
+        console.log(data)
         setProperties(data.properties);
       } catch (error) {
         console.log(error);
@@ -99,7 +100,7 @@ const Property = () => {
   if (loading)
     return (
       <div className="w-full h-screen flex justify-center items-center">
-        <Spinner />
+        <Spinner aria-label="Loading Spinner" />
       </div>
     );
   else
@@ -110,8 +111,8 @@ const Property = () => {
             className="text-xl text-[#062338] flex hover:cursor-pointer items-center space-x-2 "
             onClick={() => setFilter((el) => !el)}
           >
-            <h1 className="font-roboto font-medium text-black">Filter</h1>{" "}
-            {filter ? <RiFilterOffFill /> : <RiFilterFill />}
+            <h1 className="font-roboto font-medium flex items-center text-black">Filter{" "}
+            {filter ? <RiFilterOffFill /> : <RiFilterFill />}</h1>
           </div>
         </div>
         <div
@@ -123,6 +124,7 @@ const Property = () => {
             Filter By Price (Nrs)
           </h1>
           <Slider
+            aria-label="price min-max slider"
             disableThumbScale={true}
             showTooltip={true}
             size="md"
@@ -155,6 +157,7 @@ const Property = () => {
             ))}
 
             <Button
+              aria-label="Property Add Form Button"
               className="mt-3"
               onPress={addProperty}
               size="sm"
@@ -170,6 +173,7 @@ const Property = () => {
               Filter By Price (Nrs)
             </h1>
             <Slider
+              aria-label="Price Min Max Slider"
               disableThumbScale={true}
               showTooltip={true}
               size="md"
@@ -201,6 +205,7 @@ const Property = () => {
                 </h1>
               ))}
               <Button
+                aria-label="Property add button"
                 className="mt-3"
                 onPress={addProperty}
                 size="sm"
@@ -228,6 +233,7 @@ const Property = () => {
             </div>
             {properties && (
               <Pagination
+              aria-label="Pagination"
                 variant="light"
                 showControls
                 radius="full"
@@ -242,6 +248,7 @@ const Property = () => {
         )}
 
         <Modal
+           aria-label="ADD property modal"
           isDismissable={false}
           size="5xl"
           scrollBehavior="inside"
