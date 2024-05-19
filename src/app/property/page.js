@@ -47,7 +47,7 @@ const Property = () => {
     const fetchProperties = async () => {
       try {
         const res = await fetch(
-          `/api/properties/all`
+          `/api/properties`
         );
         console.log(res);
         // if (!res.ok) {

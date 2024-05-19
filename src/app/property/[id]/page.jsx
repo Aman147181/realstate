@@ -101,15 +101,15 @@ const Page = () => {
           src={property?.images[0]}
         />
       </div>
-      <div className="grid grid-cols-1 gap-12 gap-y-5 lg:grid-cols-2 mt-32 py-5">
-        <h1 className="col-span-1 text-5xl font-medium">
+      <div className="grid grid-cols-1 gap-12 gap-y-5 lg:grid-cols-2 mt-10 md:mt-32 py-5">
+        <h1 className="col-span-1 text-3xl sm:text-5xl font-medium">
           More details about the property
         </h1>
         <div className="col-span-1 flex flex-col space-y-0 items-start justify-start">
           <h1>{property?.description}</h1>
           <div className="w-full">
             <div className="justify-between mt-12  flex w-full items-center">
-              <h1 className="text-4xl">Address</h1>
+              <h1 className="text-2xl  mobile:text-4xl">Address</h1>
               {console.log(property)}
               <Link
                 href={
@@ -117,7 +117,7 @@ const Page = () => {
                   "https://maps.app.goo.gl/EeNG8NASzrWcRis16"
                 }
               >
-                <button className="p-5 py-2 border-1 border-black rounded-full hover:bg-black hover:text-white">
+                <button className="p-5 text-xs mobile:text-sm lg:text-lg xl:text-xl  py-2 border-1 border-black rounded-full hover:bg-black hover:text-white">
                   Open On Google Maps
                 </button>
               </Link>
