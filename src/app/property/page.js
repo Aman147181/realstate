@@ -47,7 +47,7 @@ const Property = () => {
     const fetchProperties = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BASE_URL}/api/properties/all`
+          `/api/properties/all`
         );
         console.log(res);
         // if (!res.ok) {
