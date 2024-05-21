@@ -12,7 +12,7 @@ const FeaturedRoom = ({ info }) => {
       <div className="overflow-hidden">
         <img
           radius="none"
-          className="max-h-72 min-h-72 object-cover w-full scale-125 hover:scale-100 hover:rounded-[20px] transition duration-500 ease-in-out "
+          className="max-h-72 min-h-72 object-cover w-full scale-125 hover:scale-100 hover:rounded-[20px] transition-all duration-500 ease-in-out "
           alt="Featured Room"
           src={info.images[0]}
         />

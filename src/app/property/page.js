@@ -46,16 +46,11 @@ const Property = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch(
-          `/api/properties`
-        );
+        const res = await fetch("/api/properties");
         console.log(res);
-        // if (!res.ok) {
-        //   throw new Error("Failed to fetch data");
-        // }
 
         const data = await res.json();
-        console.log(data)
+        console.log(data);
         setProperties(data.properties);
       } catch (error) {
         console.log(error);
@@ -111,12 +106,13 @@ const Property = () => {
             className="text-xl text-[#062338] flex hover:cursor-pointer items-center space-x-2 "
             onClick={() => setFilter((el) => !el)}
           >
-            <h1 className="font-roboto font-medium flex items-center text-black">Filter{" "}
-            {filter ? <RiFilterOffFill /> : <RiFilterFill />}</h1>
+            <h1 className="font-roboto font-medium flex items-center text-black">
+              Filter {filter ? <RiFilterOffFill /> : <RiFilterFill />}
+            </h1>
           </div>
         </div>
         <div
-          className={`absolute top-32 bg-white z-10 flex w-60 pt-0 p-12 pr-6 border-slate-200 border border-t-0 rounded-b-md shadow-md lg:hidden flex-col transform transition-transform duration-500 ease-in-out ${
+          className={`fixed top-32 bg-white z-10 flex w-60 pt-0 p-12 pr-6 border-slate-200 border border-t-0 rounded-b-md shadow-md lg:hidden flex-col transform transition-transform duration-500 ease-in-out ${
             filter ? "translate-x-0" : "-translate-x-[400px]"
           }`}
         >
@@ -233,7 +229,7 @@ const Property = () => {
             </div>
             {properties && (
               <Pagination
-              aria-label="Pagination"
+                aria-label="Pagination"
                 variant="light"
                 showControls
                 radius="full"
@@ -248,7 +244,7 @@ const Property = () => {
         )}
 
         <Modal
-           aria-label="ADD property modal"
+          aria-label="ADD property modal"
           isDismissable={false}
           size="5xl"
           scrollBehavior="inside"
