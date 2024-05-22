@@ -18,7 +18,7 @@ import PropertyAddForm from "@/components/PropertyAddForm";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 const Property = () => {
-  const [value, setValue] = React.useState([5, 6000000]);
+  const [value, setValue] = React.useState([5, 60000000]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { data: session } = useSession();
@@ -46,7 +46,7 @@ const Property = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch("/api/properties");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/properties`);
         console.log(res);
 
         const data = await res.json();
@@ -174,7 +174,7 @@ const Property = () => {
               showTooltip={true}
               size="md"
               step={100}
-              maxValue={100000}
+              maxValue={10000000}
               minValue={0}
               value={value}
               onChange={setValue}
