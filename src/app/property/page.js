@@ -18,7 +18,7 @@ import PropertyAddForm from "@/components/PropertyAddForm";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 const Property = () => {
-  const [value, setValue] = React.useState([5, 60000000]);
+  const [value, setValue] = React.useState([5, 6000000]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { data: session } = useSession();
