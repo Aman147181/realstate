@@ -80,7 +80,7 @@ export const POST = async (request) => {
       await newProperty.save();
       console.log(newProperty);
       return Response.redirect(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/property/${newProperty._id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/property/${newProperty._id}`
       );
     } catch (error) {
         console.log(error)

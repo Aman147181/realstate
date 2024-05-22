@@ -18,7 +18,7 @@ import PropertyAddForm from "@/components/PropertyAddForm";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 const Property = () => {
-  const [value, setValue] = React.useState([5, 60000000]);
+  const [value, setValue] = React.useState([0, 100000000]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const { data: session } = useSession();
@@ -174,7 +174,7 @@ const Property = () => {
               showTooltip={true}
               size="md"
               step={100}
-              maxValue={10000000}
+              maxValue={100000000}
               minValue={0}
               value={value}
               onChange={setValue}
@@ -213,7 +213,7 @@ const Property = () => {
           </div>
         </div>
         {filteredProperty?.length == 0 && (
-          <div className="col-span-4 lg:col-span-3 flex items-start mt-16 justify-center">
+          <div className="col-span-4 lg:col-span-3 flex items-start md:mt-16 justify-center">
             <NoProductsFound />
           </div>
         )}

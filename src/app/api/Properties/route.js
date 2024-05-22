@@ -6,7 +6,7 @@ export const GET = async (request) => {
   try {
     await connectDB();
 
-    const properties = await Property.find({});
+    const properties = await Property.find();
     const result = {
       properties,
     };

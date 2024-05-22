@@ -152,8 +152,7 @@ export default async function Property() {
       }
     ]
   }
-  console.log(property)
-  console.log(property);
+ 
  
   return (
     <div>
