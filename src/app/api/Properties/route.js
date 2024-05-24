@@ -1,4 +1,3 @@
-// /app/api/properties/route.js (assuming you're using the new App Directory structure in Next.js 13+)
 import { connectDB } from "@/config/connectDB";
 import Property from "@/models/Property";
 

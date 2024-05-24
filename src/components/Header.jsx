@@ -108,7 +108,7 @@ const Header = () => {
               <p className="font-bold">{session.user.name}</p>
             </DropdownItem>
 
-            <DropdownItem key="profile">My Profile</DropdownItem>
+            <DropdownItem key="profile"> <Link href="/profile">My Profile</Link></DropdownItem>
             <DropdownItem key="dashboard">
               {" "}
               <Link href="/dashboard">Admin Dashboard</Link>
@@ -139,7 +139,7 @@ const Header = () => {
                 <p className="font-bold">{session.user.name}</p>
               </DropdownItem>
 
-              <DropdownItem key="profile">My Profile</DropdownItem>
+              <DropdownItem key="profile"> <Link href="/profile">My Profile</Link></DropdownItem>
               <DropdownItem key="dashboard">
                 {" "}
                 <Link href="/dashboard">Admin Dashboard</Link>

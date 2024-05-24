@@ -24,7 +24,7 @@ const Page = () => {
   async function fetchProperty(id) {
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/Properties/${id}`);
-
+console.log(res)
       if (!res.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -83,7 +83,6 @@ const Page = () => {
           <h1>Area</h1>
           <h1 className="font-medium">{property?.area} sq. ft.</h1>
         </div>
-        {console.log(process.env.NEXT_PUBLIC_BASE_URL)}
         <div className="flex flex-col">
           <h1>Bedrooms</h1>
           <h1 className="font-medium">{property?.beds}</h1>
